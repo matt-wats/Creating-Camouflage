@@ -67,7 +67,7 @@ def create_camo_images(device, designer, data, batch_size, r=None):
 
     strips = data[r[:batch_size], :, row:row+section_size, :]
 
-    camos = designer(strips)
+    camos,_,_ = designer(strips)
 
     camo_images = data[r].detach().clone()
     for i in range(batch_size):
