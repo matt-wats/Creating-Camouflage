@@ -44,6 +44,11 @@ making it difficult to assign a crisp edge in the design:
 ![Designer Loss](/images/designer_loss.png "Designer Loss")
 ![Lookout Loss](/images/lookout_loss.png "Lookout Loss")
 
+The Designer continuously improves as it is improving against the distribution loss of the reparametrization step and reconstruction loss, but once these are near-
+optimal, the loss will stagnate as its focus becomes "competing" with the Lookout.
+Meanwhile, the Lookout's loss is already quite stagnant as it learns the tactics of the Designer quite early, hence why a mislabelling percentage is needed, and it 
+begins its competition with the Designer from the start, as it has no other factors included in its loss.
+
 ### Examples of the horizontal strips used in training
 #### Good Camouflage Strip
 This is an example of what a strip with good camouflage on it looks like, and the associated prediction:
@@ -73,3 +78,5 @@ We could change the section of the image that the camouflage is created for from
 The current Designer can also create new camouflages without a reference strip, because of it's Encoder-Decoder model, which is only useful in situation where we know
 certain features of the target environment but don't have actual photos. If all we care about is the process of photo to camouflage, the Designer's architecture
 can be modified to better suit this purpose.
+
+The camouflaged section could be some shape other than a square, to make it easier for it to blend in without creating such sharp edges around itself.
