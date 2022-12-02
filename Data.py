@@ -75,3 +75,13 @@ def create_camo_images(device, designer, data, batch_size, r=None):
 
 
     return camo_images
+
+def create_image_camo(device, designer, image, row, col):
+    section_size = 15
+
+    camo,_,_ = designer(image[:,row:row+section_size,:].view(1,3,15,150))
+
+    camo_image = image.detach().clone()
+    camo_image[:, row:row+section_size, col:col+section_size] = camo[0]
+
+    return camo_image
