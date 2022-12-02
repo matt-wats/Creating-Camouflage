@@ -20,7 +20,7 @@ a design that functions anywhere along the strip:
 
 Here the same camouflage is applied at y=100 and x=25 and 125, respectively.
 
-### Examples of Full Images
+### More Examples of Images with Camouflage
 We can also show full images with camouflage within them to highlight the strengths and weaknesses of the system, which can also be a game of spot the camouflage.
 
 This image is a good example of the Designer making effective camouflage for the environment, as it has consistent features:
