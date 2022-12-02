@@ -11,20 +11,13 @@ The Lookout loss is the difference between its prediction of the camouflage's lo
 
 We can highlight some examples of the Designer and Lookout after some training, and provide context for them. (each of the images and camouflage locations were generated randomly)
 
-This is an example of what a strip with good camouflage on it looks like, and the associated prediction:
-![Good Camouflage Strip](/images/good_camo_strip.png "Good Camouflage Strip")
-![Prediction of Good Camouflage](/images/good_camo_pred.png "Prediction of Good Camouflage")
+## Example Images
+These are images with a camouflage generated for a given horizontal strip, placed in two different column section, demonstrating the Designer's efficacy at creating 
+a design that functions anywhere along the strip:
+![1st Multi Camouflage Image](/images/multi_camo_image1.png "1st Multi Camouflage Image")
+![2nd Multi Camouflage Image](/images/multi_camo_image2.png "2nd Multi Camouflage Image")
 
-The prediction and true values are not closely linked, demonstrating the efficacy of the camouflage.
-
-
-This is an example of what a strip with poor camouflage on it looks like, and the associated prediction:
-![Bad Camouflage Strip](/images/bad_camo_strip.png "Bad Camouflage Strip")
-![Prediction of Bad Camouflage](/images/bad_camo_pred.png "Prediction of Bad Camouflage")
-
-It difficult for the Designer to create proper camouflage for this strip as the features change drastically through the strip, while the prior strip was more uniform,
-meaning the prediction is much closer to the true value.
-
+### Examples of Full Images
 We can also show full images with camouflage within them to highlight the strengths and weaknesses of the system, which can also be a game of spot the camouflage.
 
 This image is a good example of the Designer making effective camouflage for the environment, as it has consistent features:
@@ -41,6 +34,30 @@ In this image, the Designer has to create camouflage that matches how the mounta
 making it difficult to assign a crisp edge in the design:
 
 ![Mountain Camouflage Image](/images/okay_camo_image.png "Mountain Camouflage Image")
+
+## What the Training Looks Like
+### Training Loss Plots
+
+![Designer Loss](/images/designer_loss.png "Designer Loss")
+![Lookout Loss](/images/lookout_loss.png "Lookout Loss")
+
+### Examples of the horizontal strips used in training
+#### Good Camouflage Strip
+This is an example of what a strip with good camouflage on it looks like, and the associated prediction:
+![Good Camouflage Strip](/images/good_camo_strip.png "Good Camouflage Strip")
+![Prediction of Good Camouflage](/images/good_camo_pred.png "Prediction of Good Camouflage")
+
+The predicted and true values are not closely linked, demonstrating the efficacy of the camouflage.
+
+#### Bad Camouflage Strip
+This is an example of what a strip with poor camouflage on it looks like, and the associated prediction:
+![Bad Camouflage Strip](/images/bad_camo_strip.png "Bad Camouflage Strip")
+![Prediction of Bad Camouflage](/images/bad_camo_pred.png "Prediction of Bad Camouflage")
+
+It difficult for the Designer to create proper camouflage for this strip as the features change drastically through the strip, while the prior strip was more uniform,
+meaning the prediction is much closer to the true value.
+
+
 
 
 With hyperparameter tuning and longer training time, the camouflages should improve and become more convincing!
