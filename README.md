@@ -3,7 +3,9 @@ Combining VAE and GAN techniques to create camouflage in images
 
 
 
-We have a dataset of images of nature with a size of 150x150. We then select a 15x150 horizontal strip from the image, which we pass into a Variational Auto-Encoder-esque model, the Designer, which will construct a 15x15 'camo' which tries to blend in with the rest of the strip.
+We have a dataset of images of nature with a size of 150x150. We then select a 15x150 horizontal strip from the image, which we pass into a Variational Auto-Encoder-esque model, the Designer, which will construct a 15x15 'camo' which tries to blend in with the rest of the strip. Because of this Encoder-Decoder model, we can 
+generate new camouflages from only a set of features, rather than a whole image, and can interpolate between camouflage features cleanly. The encoded features are 
+trained to be a normal distribution with mean zero and variance one.
 While we have another model, the Lookout, which is given the image strip and attempts to discern where the camoflouge is.
 
 The Designer loss is a combination of reconstruction loss of a section from the strip, distribution loss for the reparametrization, and visibility to the Lookout.
